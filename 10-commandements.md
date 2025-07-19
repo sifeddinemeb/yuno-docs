@@ -1,17 +1,59 @@
-**The 10 Commandments for YOU**
+## 🧾 The 10 Commandments
 
-*Remember to always adhere to these principles in addition to the specific task in the prompt. Your primary directive is to assist in building a functional and maintainable Image Processor MVP, following the user's iterative workflow.*
+### 1. **Clarity Beats Cleverness**
 
-1.  **Master the Blueprint (`refactor.md`):** Before *any* code modification, internalize the project structure and principles defined in `refactor.md`. All new code and refactoring *must* align with this blueprint. If a task seems to conflict, seek clarification.
-2.  **Re-Affirm the Current Task Context:** At the beginning of processing any new prompt, briefly state your understanding of the immediate goal *and* how it fits into the broader picture outlined in `plan.md`.
-3.  **Document Diligently & Immediately:** *After successfully completing any code changes that are confirmed to be kept*, you *must* update all relevant documentation files (`plan.md` checklists, `bugs-and-issues.md` status, `dev-roadmap.md` progress, `refactor.md` if its plan is being executed/modified, etc.). **All documentation updates must include a UTC timestamp.** This is non-negotiable.
-4.  **Stay Focused, Work Incrementally:** Execute only the specific tasks requested in the prompt. Do not modify unrelated files or implement features not explicitly asked for. If a task is large, propose to break it down into smaller, verifiable steps.
-5.  **Preserve Functionality Above All:** Unless the task is a specific, intentional breaking change (like the initial refactor), ensure the application remains functional after your modifications. Prioritize keeping the MVP in a testable state.
-6.  **Explain Your Work Clearly:** After completing the task, provide a concise summary of:
-    *   What files you changed.
-    *   A brief overview of the changes made in each file.
-    *   Confirmation that documentation has been updated (or specify which docs if not all were relevant).
-7.  **Adhere to Code Quality & Conventions:** Follow the coding style, naming conventions, and architectural patterns established in `refactor.md` and existing well-structured code. Write clean, readable, and maintainable Python code.
-8.  **Anticipate the Feedback Loop:** Understand that your output will be tested by the user. Structure your changes and explanations in a way that facilitates easy review and testing. If you foresee potential issues or edge cases related to your changes, mention them.
-9.  **Implement Robust Error Handling (Proactively):** For any new logic involving data operations, user input, or potential external interactions (even mocked ones for now), implement appropriate error handling (e.g., try-catch blocks, clear user feedback for UI errors).
-10. **Verify File Paths & Imports:** Double-check all file paths and import statements, especially after refactoring or moving files, to ensure they align with the `refactor.md` structure and that the application can compile and run.
+Build for the next developer (even if that’s you in 6 months). Clear, readable, and boring is better than brilliant and broken.
+
+---
+
+### 2. **Everything Must Be Modular**
+
+No hardcoding. No tangled logic. Break things into reusable, replaceable pieces — functions, modules, components, or services.
+
+---
+
+### 3. **Use Types and Docs Religiously**
+
+Every function and class must have type hints and a docstring. If someone can’t understand it in 10 seconds, it’s not ready.
+
+---
+
+### 4. **Make Errors Helpful**
+
+Handle every failure like it’s a user-facing experience. Throw custom exceptions, log context, and guide the developer or user to a fix.
+
+---
+
+### 5. **Never Mix Concerns**
+
+UI ≠ logic ≠ storage ≠ services. Keep layers separate and interfaces clean. No business logic in the UI. No DB calls in utils.
+
+---
+
+### 6. **No Feature Without a Use Case**
+
+Don’t build “just in case.” If it’s not needed now (or in the current sprint), it’s scope creep. Stick to what matters.
+
+---
+
+### 7. **Everything is Replaceable**
+
+Code should be disposable. Use patterns that make it easy to swap in a new model, UI, or backend with minimal rewiring.
+
+---
+
+### 8. **One Source of Truth**
+
+Whether it’s config, environment, state, or business rules — it should live in **one place only**. Avoid duplication at all costs.
+
+---
+
+### 9. **Docs are Part of the Product**
+
+Every system, feature, or endpoint must have **markdown-level documentation**. Good docs aren’t extra — they’re deliverables.
+
+---
+
+### 10. **Done Means It Works Without You**
+
+A feature is only “done” when it can be used, debugged, and extended **without the author’s help**. That’s real freedom.
